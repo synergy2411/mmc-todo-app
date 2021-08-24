@@ -1,11 +1,11 @@
 const express = require("express")
-const env = require("dotenv")
+// const env = require("dotenv")
 require("./db");
 const TodoRouter = require("./routes/todos.routes")
 
 const { sign, verify } = require("jsonwebtoken")
 
-env.config()
+// env.config()
 const app = express();
 const PORT = process.env.PORT || 9000
 
