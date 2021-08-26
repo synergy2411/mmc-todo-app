@@ -5,8 +5,10 @@ const router = express.Router()
 
 router.route("")            // http://localhost:9090/todos
     .get(async (req, res, next) => {
+        console.log("API HIT - GET TODOS")
         try{
             const allTodos = await TodoModel.find()
+            console.log(allTodos)
             return res.send(allTodos)
         }catch(err){
             return res.send(err)

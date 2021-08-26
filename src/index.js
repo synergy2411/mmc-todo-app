@@ -1,5 +1,6 @@
 const express = require("express")
 // const env = require("dotenv")
+const cors = require("cors")
 require("./db");
 const TodoRouter = require("./routes/todos.routes")
 
@@ -9,6 +10,7 @@ const { sign, verify } = require("jsonwebtoken")
 const app = express();
 const PORT = process.env.PORT || 9000
 
+app.use(cors())
 app.use(express.json());
 
 // Application level Middleware
